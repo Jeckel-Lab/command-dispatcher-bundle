@@ -7,8 +7,13 @@ declare(strict_types=1);
 
 namespace JeckelLab\CommandDispatcherBundle\Compiler;
 
+use JeckelLab\CommandDispatcher\CommandDispatcher;
+use JeckelLab\CommandDispatcher\CommandDispatcherInterface;
+use JeckelLab\CommandDispatcher\Resolver\CommandHandlerResolver;
+use JeckelLab\CommandDispatcher\Resolver\CommandHandlerResolverInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 
 /**
  * Class RegisterServicesPass

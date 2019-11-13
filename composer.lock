@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Jeckel-Lab/command-dispatcher.git",
-                "reference": "1c4865eecde134b2536b4d0b2ae382fcf98eae4f"
+                "reference": "71dc5fe44b393aa90fa431de818f847cadee5f41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Jeckel-Lab/command-dispatcher/zipball/1c4865eecde134b2536b4d0b2ae382fcf98eae4f",
-                "reference": "1c4865eecde134b2536b4d0b2ae382fcf98eae4f",
+                "url": "https://api.github.com/repos/Jeckel-Lab/command-dispatcher/zipball/71dc5fe44b393aa90fa431de818f847cadee5f41",
+                "reference": "71dc5fe44b393aa90fa431de818f847cadee5f41",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 }
             ],
             "description": "Command dispatcher implementation",
-            "time": "2019-11-13T08:06:46+00:00"
+            "time": "2019-11-13T08:14:22+00:00"
         },
         {
             "name": "psr/container",

@@ -5,10 +5,8 @@ declare(strict_types=1);
  * Created at : 12/11/2019
  */
 
-namespace JeckelLab\ContainerDispatcher\Compiler;
+namespace JeckelLab\CommandDispatcherBundle\Compiler;
 
-use JeckelLab\ContainerDispatcher\CommandHandler\CommandHandlerInterface;
-use JeckelLab\ContainerDispatcher\Resolver\CommandHandlerResolverInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
