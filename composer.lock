@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3ae900664f68df2fd27d9b10b8c7271",
+    "content-hash": "95a2c966419ee6d7a4eae4caa0bf21f6",
     "packages": [
         {
             "name": "jeckel-lab/command-dispatcher",
-            "version": "dev-symfony-compiler-pass",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Jeckel-Lab/command-dispatcher.git",
-                "reference": "71dc5fe44b393aa90fa431de818f847cadee5f41"
+                "reference": "7e67205f4c97250a73a9390d97f1209acd8ee76d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Jeckel-Lab/command-dispatcher/zipball/71dc5fe44b393aa90fa431de818f847cadee5f41",
-                "reference": "71dc5fe44b393aa90fa431de818f847cadee5f41",
+                "url": "https://api.github.com/repos/Jeckel-Lab/command-dispatcher/zipball/7e67205f4c97250a73a9390d97f1209acd8ee76d",
+                "reference": "7e67205f4c97250a73a9390d97f1209acd8ee76d",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 }
             ],
             "description": "Command dispatcher implementation",
-            "time": "2019-11-13T08:14:22+00:00"
+            "time": "2019-11-13T08:51:37+00:00"
         },
         {
             "name": "psr/container",
@@ -1227,11 +1227,12 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "jeckel-lab/command-dispatcher": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.2"
+    },
     "platform-dev": []
 }
