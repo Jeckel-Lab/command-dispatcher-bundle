@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Definition;
  * Class RegisterServicesPass
  * @package Compiler
  */
-class RegisterServicesPass extends CompilerPassInterface
+class RegisterServicesPass implements CompilerPassInterface
 {
     /**
      * @param ContainerBuilder $container
