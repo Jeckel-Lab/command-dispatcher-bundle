@@ -1,11 +1,15 @@
 {
     "name": "jeckel-lab/command-dispatcher-bundle",
     "description": "Command Dispatcher as a symfony bundle",
-    "type": "library",
+    "type": "symfony-bundle",
     "require": {
         "jeckel-lab/command-dispatcher": "dev-symfony-compiler-pass",
         "symfony/dependency-injection": "^4.3",
         "symfony/http-kernel": "^4.3"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
     },
     "license": "MIT",
     "authors": [
