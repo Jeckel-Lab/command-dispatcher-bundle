@@ -6,7 +6,7 @@
         "php": "^7.2",
         "symfony/dependency-injection": "^4.3",
         "symfony/http-kernel": "^4.3",
-        "jeckel-lab/command-dispatcher": "^0.1.1"
+        "jeckel-lab/command-dispatcher": "^0.1"
     }
     ,
     "require-dev": {
