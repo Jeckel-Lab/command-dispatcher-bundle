@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="jeckellab.command.dispatcher" class="JeckelLab\CommandDispatcher\CommandDispatcher" public="false">
+            <argument type="service" id="jeckellab.command.handler.resolver" />
+            <argument type="service" id="event_dispatcher" />
+        </service>
+        <service id="jeckellab.command.handler.resolver" class="JeckelLab\CommandDispatcher\Resolver\CommandHandlerResolver" public="false">
+            <argument>%command_handler.handlers.map%</argument>
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="JeckelLab\CommandDispatcher\CommandDispatcherInterface" alias="jeckellab.command.dispatcher"/>
+    </services>
+</container>
