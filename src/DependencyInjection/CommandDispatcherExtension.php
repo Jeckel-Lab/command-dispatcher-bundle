@@ -1,9 +1,11 @@
 <?php
-declare(strict_types=1);
+
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
  * Created at : 25/11/2019
  */
+
+declare(strict_types=1);
 
 namespace JeckelLab\CommandDispatcherBundle\DependencyInjection;
 
@@ -22,12 +24,13 @@ class CommandDispatcherExtension extends Extension
      * @param array            $configs
      * @param ContainerBuilder $container
      * @throws Exception
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new XmlFileLoader(
             $container,
-            new FileLocator(__DIR__.'/../Resources/config')
+            new FileLocator(__DIR__ . '/../Resources/config')
         );
         $loader->load('services.xml');
     }
