@@ -9,6 +9,7 @@ namespace JeckelLab\CommandDispatcherBundle\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 
 /**
  * Class CommandHandlerPass
@@ -40,6 +41,9 @@ class CommandHandlerPass implements CompilerPassInterface
         foreach ($container->findTaggedServiceIds($this->handlersTag) as $serviceId => $tags) {
 
             $classname = $container->getDefinition($serviceId)->getClass();
+            if (null === $classname) {
+                throw new RuntimeException(sprintf('Unable to find service with id: %s', $serviceId));
+            }
 
             $aliasId = 'command_handler.handler.alias.'.$classname;
             $container->setAlias($aliasId, $serviceId)->setPublic(true);

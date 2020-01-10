@@ -21,7 +21,7 @@ class JeckelLabCommandDispatcherBundle extends Bundle
     /**
      * @param ContainerBuilder $container
      */
-    public function build(ContainerBuilder $container)
+    public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new CommandHandlerPass('command_dispatcher.handler'));
     }
