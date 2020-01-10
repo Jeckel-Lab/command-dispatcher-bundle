@@ -1,9 +1,11 @@
 <?php
-declare(strict_types=1);
+
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
  * Created at : 13/11/2019
  */
+
+declare(strict_types=1);
 
 namespace JeckelLab\CommandDispatcherBundle;
 

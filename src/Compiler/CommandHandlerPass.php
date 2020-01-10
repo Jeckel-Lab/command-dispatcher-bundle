@@ -1,9 +1,11 @@
 <?php
-declare(strict_types=1);
+
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
  * Created at : 12/11/2019
  */
+
+declare(strict_types=1);
 
 namespace JeckelLab\CommandDispatcherBundle\Compiler;
 
@@ -38,19 +40,18 @@ class CommandHandlerPass implements CompilerPassInterface
     {
         $handlerMaps = [];
         // Find command handlers
-        foreach ($container->findTaggedServiceIds($this->handlersTag) as $serviceId => $tags) {
-
+        foreach (array_keys($container->findTaggedServiceIds($this->handlersTag)) as $serviceId) {
             $classname = $container->getDefinition($serviceId)->getClass();
             if (null === $classname) {
                 throw new RuntimeException(sprintf('Unable to find service with id: %s', $serviceId));
             }
 
-            $aliasId = 'command_handler.handler.alias.'.$classname;
+            $aliasId = 'command_handler.handler.alias.' . $classname;
             $container->setAlias($aliasId, $serviceId)->setPublic(true);
 
             /** @var array $commands */
             $commands = call_user_func([$classname, 'getHandledCommands']);
-            foreach($commands as $command) {
+            foreach ($commands as $command) {
                 $handlerMaps[$command] = $aliasId;
             }
         }
