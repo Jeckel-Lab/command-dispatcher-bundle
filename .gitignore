@@ -3,5 +3,6 @@
 
 # 3rd parties
 /vendor/
+/composer.lock
 
 /.phpcs-cache
