@@ -8,11 +8,23 @@
             <argument type="service" id="jeckellab.command.handler.resolver" />
             <argument type="service" id="event_dispatcher" />
         </service>
+        <service id="jeckellab.command.bus.command_dispatcher" class="JeckelLab\CommandDispatcher\CommandBus\CommandDispatcher">
+            <argument type="service" id="jeckellab.command.handler.resolver" />
+        </service>
+        <service id="jeckellab.command.bus.entity_flush_decorator" class="JeckelLab\CommandDispatcherBundle\CommandBus\Decorator\EntityFlushDecorator">
+            <argument type="service" id="jeckellab.command.bus.command_dispatcher" />
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+        </service>
+        <service id="jeckellab.command.bus.event_dispatcher_decorator" class="JeckelLab\CommandDispatcher\CommandBus\EventDispatcherDecorator">
+            <argument type="service" id="event_dispatcher" />
+            <argument type="service" id="jeckellab.command.bus.entity_flush_decorator" />
+        </service>
+
         <service id="jeckellab.command.handler.resolver" class="JeckelLab\CommandDispatcher\Resolver\CommandHandlerResolver" public="false">
             <argument>%command_handler.handlers.map%</argument>
             <argument type="service" id="service_container" />
         </service>
 
-        <service id="JeckelLab\CommandDispatcher\CommandDispatcherInterface" alias="jeckellab.command.dispatcher"/>
+        <service id="JeckelLab\CommandDispatcher\CommandDispatcherInterface" alias="jeckellab.command.bus.event_dispatcher_decorator"/>
     </services>
 </container>
