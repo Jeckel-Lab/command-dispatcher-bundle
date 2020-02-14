@@ -26,5 +26,6 @@
         </service>
 
         <service id="JeckelLab\CommandDispatcher\CommandDispatcherInterface" alias="jeckellab.command.bus.event_dispatcher_decorator"/>
+        <service id="JeckelLab\CommandDispatcher\CommandBus\CommandBusInterface" alias="jeckellab.command.bus.event_dispatcher_decorator"/>
     </services>
 </container>
