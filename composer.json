@@ -6,8 +6,10 @@
         "php": "^7.2",
         "symfony/dependency-injection": "^4.3 || ^5.0",
         "symfony/http-kernel": "^4.3 || ^5.0",
-        "jeckel-lab/command-dispatcher": "^0.1",
-        "symfony/config": "^4.3 || ^5.0"
+        "jeckel-lab/command-dispatcher": "^0.2",
+        "symfony/config": "^4.3 || ^5.0",
+        "symfony/doctrine-bridge": "^4.3 || ^5.0",
+        "doctrine/orm": "^2.7"
     }
     ,
     "require-dev": {
