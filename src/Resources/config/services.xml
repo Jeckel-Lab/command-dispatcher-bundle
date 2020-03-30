@@ -15,8 +15,12 @@
             <argument type="service" id="jeckellab.command.bus.command_dispatcher" />
             <argument type="service" id="doctrine.orm.default_entity_manager" />
         </service>
-        <service id="jeckellab.command.bus.event_dispatcher_decorator" class="JeckelLab\CommandDispatcher\CommandBus\EventDispatcherDecorator">
+        <service id="jeckellab.command.bus.event_dispatcher.entity_flush_decorator" class="JeckelLab\CommandDispatcherBundle\EventDispatcher\Decorator\EntityFlushDecorator">
             <argument type="service" id="event_dispatcher" />
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+        </service>
+        <service id="jeckellab.command.bus.event_dispatcher_decorator" class="JeckelLab\CommandDispatcher\CommandBus\EventDispatcherDecorator">
+            <argument type="service" id="jeckellab.command.bus.event_dispatcher.entity_flush_decorator" />
             <argument type="service" id="jeckellab.command.bus.entity_flush_decorator" />
         </service>
 
