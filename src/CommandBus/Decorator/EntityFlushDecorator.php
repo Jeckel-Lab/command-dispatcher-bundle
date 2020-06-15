@@ -10,17 +10,17 @@ declare(strict_types=1);
 namespace JeckelLab\CommandDispatcherBundle\CommandBus\Decorator;
 
 use Doctrine\ORM\EntityManagerInterface;
-use JeckelLab\CommandDispatcher\Command\CommandInterface;
-use JeckelLab\CommandDispatcher\CommandBus\CommandBusInterface;
-use JeckelLab\CommandDispatcher\CommandResponse\CommandResponseInterface;
+use JeckelLab\Contract\Core\CommandDispatcher\Command\Command;
+use JeckelLab\Contract\Core\CommandDispatcher\CommandBus\CommandBus;
+use JeckelLab\Contract\Core\CommandDispatcher\CommandResponse\CommandResponse;
 
 /**
  * Class EntityFlushDecorator
  * @package App\Core\CommandBus
  */
-class EntityFlushDecorator implements CommandBusInterface
+class EntityFlushDecorator implements CommandBus
 {
-    /** @var CommandBusInterface */
+    /** @var CommandBus */
     protected $next;
 
     /** @var EntityManagerInterface */
@@ -28,20 +28,20 @@ class EntityFlushDecorator implements CommandBusInterface
 
     /**
      * EntityFlushDecorator constructor.
-     * @param CommandBusInterface    $next
+     * @param CommandBus    $next
      * @param EntityManagerInterface $entityManager
      */
-    public function __construct(CommandBusInterface $next, EntityManagerInterface $entityManager)
+    public function __construct(CommandBus $next, EntityManagerInterface $entityManager)
     {
         $this->next = $next;
         $this->entityManager = $entityManager;
     }
 
     /**
-     * @param CommandInterface $command
-     * @return CommandResponseInterface
+     * @param Command $command
+     * @return CommandResponse
      */
-    public function dispatch(CommandInterface $command): CommandResponseInterface
+    public function dispatch(Command $command): CommandResponse
     {
         $response = $this->next->dispatch($command);
 
