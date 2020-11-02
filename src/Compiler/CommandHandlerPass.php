@@ -41,15 +41,15 @@ class CommandHandlerPass implements CompilerPassInterface
         $handlerMaps = [];
         // Find command handlers
         foreach (array_keys($container->findTaggedServiceIds($this->handlersTag)) as $serviceId) {
-            $classname = $container->getDefinition($serviceId)->getClass();
+            $classname = $container->getDefinition((string) $serviceId)->getClass();
             if (null === $classname) {
                 throw new RuntimeException(sprintf('Unable to find service with id: %s', $serviceId));
             }
 
             $aliasId = 'command_handler.handler.alias.' . $classname;
-            $container->setAlias($aliasId, $serviceId)->setPublic(true);
+            $container->setAlias($aliasId, (string) $serviceId)->setPublic(true);
 
-            /** @var array $commands */
+            /** @var string[] $commands */
             $commands = call_user_func([$classname, 'getHandledCommands']);
             foreach ($commands as $command) {
                 $handlerMaps[$command] = $aliasId;
