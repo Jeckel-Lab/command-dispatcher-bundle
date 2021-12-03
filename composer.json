@@ -5,7 +5,7 @@
     "require": {
         "php": "^7.2 || ^8.0",
         "symfony/dependency-injection": "^4.3 || ^5.0",
-        "symfony/http-kernel": "^4.3 || ^5.1.5",
+        "symfony/http-kernel": "^4.3 || ^5.1",
         "jeckel-lab/command-dispatcher": "^0.4",
         "symfony/config": "^4.3 || ^5.0",
         "symfony/doctrine-bridge": "^4.3 || ^5.0",
