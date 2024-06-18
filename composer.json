@@ -9,7 +9,7 @@
         "jeckel-lab/command-dispatcher": "^0.4",
         "symfony/config": "^4.3 || ^5.0",
         "symfony/doctrine-bridge": "^4.3 || ^5.0",
-        "doctrine/orm": "^2.7"
+        "doctrine/orm": "^3.2"
     }
     ,
     "require-dev": {
